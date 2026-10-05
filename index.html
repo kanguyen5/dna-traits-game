@@ -6,7 +6,109 @@ body{font-family:'Lexend',Arial,sans-serif;background:radial-gradient(circle at 
 .navrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}.back{background:#f1f6fa}.qvisual{background:linear-gradient(135deg,#eef8ff,#fff8e8);border:2px solid #d9e8f1;border-radius:18px;padding:18px;margin:14px 0}.visual-title{font-size:13px;font-weight:800;letter-spacing:.08em;color:#52718a;margin-bottom:10px}.dna-strand{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}.base{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;border:2px solid rgba(0,0,0,.08)}.a{background:#dff4e4}.t{background:#ffe8b8}.cbase{background:#dfeeff}.g{background:#f5dff1}.diagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}.diagram-box{background:white;border:2px solid #dce8f1;border-radius:14px;padding:12px;font-weight:700}.bigicon{font-size:32px;display:block;margin-bottom:4px}.sentence-frame{background:white;border:2px dashed #b8cfdd;border-radius:14px;padding:14px;font-weight:600}.checkpoint-map{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.checkpoint-map span{padding:6px 9px;border-radius:999px;background:#edf4f8;font-size:12px;font-weight:700}.checkpoint-map .now{background:#dcefff;color:#174d73}.checkpoint-map .done{background:#e3f5e7;color:#28643b}
 @media(max-width:600px){.diagram-grid{grid-template-columns:1fr}.base{width:38px;height:38px}}
 .page-accent{height:8px;border-radius:999px;background:linear-gradient(90deg,#4f9dcc 0 22%,#efc55d 22% 43%,#75b982 43% 65%,#9b7fc2 65% 83%,#4f9dcc 83%);margin-bottom:14px}.section-dots{display:flex;gap:7px;margin:8px 0 18px}.section-dots i{display:block;width:11px;height:11px;border-radius:50%}.section-dots i:nth-child(1){background:#65a9d1}.section-dots i:nth-child(2){background:#efc55d}.section-dots i:nth-child(3){background:#79bd87}.section-dots i:nth-child(4){background:#a48ac7}.checkin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.checkin-grid .diagram-box{min-width:0}@media(max-width:650px){.checkin-grid{grid-template-columns:1fr}}
-</style></head><body><div class="w">
+</style>
+<style>
+:root{
+  --dark-bg:#0f1720;
+  --dark-bg2:#172432;
+  --dark-card:#1d2b38;
+  --dark-card2:#223444;
+  --dark-border:#3b5366;
+  --dark-text:#f3f7fa;
+  --dark-muted:#c4d0d9;
+  --dark-blue:#76bce8;
+  --dark-gold:#f2cf78;
+  --dark-green:#8bd19a;
+}
+body{
+  background-color:var(--dark-bg)!important;
+  background-image:
+    radial-gradient(circle at 12% 10%,rgba(67,139,184,.18) 0 120px,transparent 121px),
+    radial-gradient(circle at 88% 18%,rgba(215,171,70,.11) 0 145px,transparent 146px),
+    radial-gradient(circle at 82% 76%,rgba(89,163,108,.11) 0 170px,transparent 171px),
+    linear-gradient(145deg,#0d1620 0%,#142433 50%,#101b25 100%)!important;
+  color:var(--dark-text)!important;
+}
+.c,.vocab-simple{
+  background:rgba(29,43,56,.97)!important;
+  border-color:var(--dark-border)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+}
+.hero-band{
+  background:linear-gradient(120deg,rgba(28,49,66,.98),rgba(42,47,48,.98))!important;
+  border-color:var(--dark-border)!important;
+}
+h1,h2,h3,.vword{color:var(--dark-text)!important}
+p,small,.small{color:var(--dark-muted)}
+.tag{color:var(--dark-blue)!important}
+.note{
+  background:#183247!important;
+  border-left-color:#65aee0!important;
+  color:var(--dark-text)!important;
+}
+.write{
+  background:#3a3320!important;
+  border-color:#8d7440!important;
+  color:#fff6d8!important;
+}
+.choice{
+  background:#223442!important;
+  border-color:#40596c!important;
+  color:var(--dark-text)!important;
+}
+.choice:hover{border-color:#78b8df!important;background:#284052!important}
+.diagram-box,.bubble,.flow span,.sentence-frame{
+  background:#223442!important;
+  border-color:#40596c!important;
+  color:var(--dark-text)!important;
+}
+.qvisual,.mini-visual{
+  background:linear-gradient(135deg,#1b3446,#343123)!important;
+  border-color:#40596c!important;
+  color:var(--dark-text)!important;
+}
+.btn{
+  background:#263947!important;
+  border-color:#4c6577!important;
+  color:#f5f8fa!important;
+}
+.btn.primary{
+  background:#397da8!important;
+  border-color:#5da5d2!important;
+  color:white!important;
+}
+.btn.back,.btn.secondary{background:#253746!important}
+input,select{
+  background:#162633!important;
+  color:#f4f7f9!important;
+  border-color:#4a6274!important;
+}
+input::placeholder{color:#9fb0bd}
+.vocab-simple h3,.vocab-table th{
+  background:#1a3142!important;
+  color:#f3f7fa!important;
+}
+.vocab-table td{
+  color:#edf3f7!important;
+  border-color:#344c5d!important;
+}
+.vocab-table td:first-child{color:#8dcaf0!important}
+.good{
+  background:#193d2b!important;
+  color:#c9f5d4!important;
+  border-color:#3e7952!important;
+}
+.try{
+  background:#42371d!important;
+  color:#fff0ba!important;
+  border-color:#826d34!important;
+}
+.helpbox{background:#183247!important;border-color:#3e637c!important;color:#f3f7fa!important}
+.bar{background:#273b49!important}
+.bar div{background:linear-gradient(90deg,#5aa8d8,#7cc48d)!important}
+</style>
+
+</head><body><div class="w">
 <div class="c"><div class="page-accent"></div><div class="tag">B.7A • SELF-CHECKING INDEPENDENT PRACTICE</div><h1>Crack the Code: DNA → Traits</h1><p>Learn it. Write it. Show your work. Check yourself.</p><div class="bar"><div id="bar"></div></div><small id="status">Mission ready</small></div>
 
 <div id="login" class="c"><div class="section-dots"><i></i><i></i><i></i><i></i></div>
@@ -27,8 +129,8 @@ body{font-family:'Lexend',Arial,sans-serif;background:radial-gradient(circle at 
 <div id="lesson" class="c hide"><div class="section-dots"><i></i><i></i><i></i><i></i></div><div id="ltag" class="tag"></div><h2 id="ltitle"></h2><div id="teach"></div><div id="copy" class="write"></div><label><input id="copied" type="checkbox"> I completed the paper task.</label><div class="actions"><button id="backLesson" class="btn back">← Back</button><button id="vocab1" class="btn">Vocabulary Help</button><button id="practice" class="btn primary" disabled>Practice It →</button></div><div id="vp1" class="hide"></div></div>
 <div id="qcard" class="c hide"><div class="section-dots"><i></i><i></i><i></i><i></i></div><div id="qtag" class="tag"></div><h2 id="qtitle"></h2><div id="qvisual" class="qvisual"></div><div id="work" class="write"></div><label><input id="worked" type="checkbox"> I completed the quick paper task.</label><div id="qa" class="hide"><p><b id="question"></b></p><form id="form"><div id="choices"></div><div class="actions"><button type="button" id="backQuestion" class="btn back">← Back</button><button type="button" id="help" class="btn">Need Help?</button><button type="button" id="vocab2" class="btn">Vocabulary</button><button id="check" class="btn primary">Check Answer</button></div></form><div id="feedback" class="hide"></div><div id="helpbox" class="note hide" style="margin-top:12px"></div><button id="next" class="btn primary hide" style="margin-top:14px">Continue →</button></div><div id="vp2" class="hide"></div></div>
 <div id="bossintro" class="c hide"><div class="section-dots"><i></i><i></i><i></i><i></i></div><div class="tag">ALL OR NOTHING</div><h2>All or Nothing Questions</h2><p>Answer all 10 questions independently. You get one attempt per question, and your first answer counts toward your grade.</p><div class="note"><b>10 questions • 1 attempt each • 10 points each</b><br>No paper work is required for this section. Read each question carefully before submitting.</div><div class="actions"><button id="bstart" class="btn primary">Begin All or Nothing →</button></div></div>
-<div id="finish" class="c hide"><div class="section-dots"><i></i><i></i><i></i><i></i></div><div class="tag">MISSION COMPLETE</div><h2>Code Cracked!</h2><h1 id="result"></h1><p id="review"></p><div class="note"><b>The Master Code</b><div class="flow"><span>DNA nucleotide sequence</span>→<span>amino acid sequence</span>→<span>polypeptide</span>→<span>trait</span></div></div><div id="submitStatus" class="note"><b>Your grade is ready to submit.</b><br>Click <b>Submit My Results</b> once. Wait for the confirmation before closing this page.</div>
-<div class="actions"><button id="submitResults" class="btn primary">Submit My Results</button></div>
+<div id="finish" class="c hide"><div class="section-dots"><i></i><i></i><i></i><i></i></div><div class="tag">MISSION COMPLETE</div><h2>Code Cracked!</h2><h1 id="result"></h1><p id="review"></p><div class="note"><b>The Master Code</b><div class="flow"><span>DNA nucleotide sequence</span>→<span>amino acid sequence</span>→<span>polypeptide</span>→<span>trait</span></div></div><div id="submitStatus" class="note"><b>Submitting your results...</b><br>Do not close this tab until you see <b>RESULTS RECEIVED</b>.</div>
+<div class="actions"><button id="submitResults" class="btn primary hide" type="button">Retry Submission</button><button id="backupSubmit" class="btn hide" type="button">Open Backup Submission</button></div>
 <iframe name="submitFrame" id="submitFrame" class="hide"></iframe>
 <form id="resultForm" class="hide" method="POST" target="submitFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSfJRlmGr2lX13e4-p7LV3nzARkZX8Y2AGjA5cJkRGoQfoXKMQ/formResponse">
 <input name="entry.1041621689" id="rfFirst"><input name="entry.257146659" id="rfLast"><input name="entry.1943035688" id="rfPeriod"><input name="entry.1403676878" id="rfTeacher"><input name="entry.237619249" id="rfScore"><input name="entry.1420278665" id="rfPercent"><input name="entry.2006521624" id="rfReview">
@@ -240,22 +342,82 @@ function check(e){
   lockChoices();
 }
 function advance(){if(boss){bi++;if(bi>=10)return finish();question();return}qi++;if(qi<3)return question();cp++;qi=0;if(cp>=5){$("qcard").classList.add("hide");$("bossintro").classList.remove("hide");prog()}else lesson()}
-function finish(){$("qcard").classList.add("hide");$("finish").classList.remove("hide");$("bar").style.width="100%";$("status").textContent="Mission complete";$("result").textContent="All or Nothing: "+score+" / 10 ("+(score*10)+"%)";let n=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"],m=Math.max(...review);$("review").textContent=m?"Recommended review: "+n[review.indexOf(m)]+".":"Strong work across all checkpoints."}
+function finish(){$("qcard").classList.add("hide");$("finish").classList.remove("hide");$("bar").style.width="100%";$("status").textContent="Mission complete";$("result").textContent="All or Nothing: "+score+" / 10 ("+(score*10)+"%)";let n=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"],m=Math.max(...review);$("review").textContent=m?"Recommended review: "+n[review.indexOf(m)]+".":"Strong work across all checkpoints.";setTimeout(submitResults,250)}
 
-$("submitResults").onclick=()=>{
+let submissionPending=false;
+let submissionConfirmed=false;
+let submissionTimer=null;
+
+function resultPayload(){
   const names=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"];
   const max=Math.max(...review);
   const rec=max===0?"No review needed":names[review.indexOf(max)];
-  $("rfFirst").value=$("firstName").value.trim();
-  $("rfLast").value=$("lastName").value.trim();
-  $("rfPeriod").value=$("period").value;$("rfTeacher").value=$("teacher").value;
-  $("rfScore").value=score+"/10";
-  $("rfPercent").value=(score*10)+"%";
-  $("rfReview").value=rec;
+  return {
+    first:$("firstName").value.trim(),
+    last:$("lastName").value.trim(),
+    period:$("period").value,
+    teacher:$("teacher").value,
+    score:score+"/10",
+    percent:(score*10)+"%",
+    review:rec
+  };
+}
+
+function fillResultForm(){
+  const d=resultPayload();
+  $("rfFirst").value=d.first;
+  $("rfLast").value=d.last;
+  $("rfPeriod").value=d.period;
+  $("rfTeacher").value=d.teacher;
+  $("rfScore").value=d.score;
+  $("rfPercent").value=d.percent;
+  $("rfReview").value=d.review;
+}
+
+function submitResults(){
+  if(submissionPending||submissionConfirmed)return;
+  fillResultForm();
+  submissionPending=true;
+  $("submitResults").classList.add("hide");
+  $("backupSubmit").classList.add("hide");
+  $("submitStatus").className="note";
+  $("submitStatus").innerHTML="<b>Submitting your results...</b><br>Do not close this tab. Waiting for Google to confirm receipt.";
   $("resultForm").submit();
-  $("submitResults").disabled=true;
-  $("submitResults").textContent="Submitted";
-  $("submitStatus").innerHTML="<b>Results submitted.</b><br>Your teacher now has your name, teacher, period, All or Nothing grade, and recommended review area.";
+  clearTimeout(submissionTimer);
+  submissionTimer=setTimeout(()=>{
+    if(!submissionConfirmed){
+      submissionPending=false;
+      $("submitStatus").className="fb try";
+      $("submitStatus").innerHTML="<b>Submission not confirmed yet.</b><br>Do not close the page. Click <b>Retry Submission</b>. If it still does not confirm, use <b>Open Backup Submission</b>.";
+      $("submitResults").classList.remove("hide");
+      $("backupSubmit").classList.remove("hide");
+    }
+  },12000);
+}
+
+$("submitFrame").addEventListener("load",()=>{
+  if(!submissionPending||submissionConfirmed)return;
+  submissionConfirmed=true;
+  submissionPending=false;
+  clearTimeout(submissionTimer);
+  $("submitResults").classList.add("hide");
+  $("backupSubmit").classList.add("hide");
+  $("submitStatus").className="fb good";
+  $("submitStatus").innerHTML="<b>RESULTS RECEIVED</b><br>Your submission was sent. You may now close this tab.";
+});
+
+$("submitResults").onclick=submitResults;
+$("backupSubmit").onclick=()=>{
+  const d=resultPayload();
+  const base="https://docs.google.com/forms/d/e/1FAIpQLSfJRlmGr2lX13e4-p7LV3nzARkZX8Y2AGjA5cJkRGoQfoXKMQ/viewform?usp=pp_url";
+  const q="&entry.1041621689="+encodeURIComponent(d.first)+
+          "&entry.257146659="+encodeURIComponent(d.last)+
+          "&entry.1943035688="+encodeURIComponent(d.period)+
+          "&entry.1403676878="+encodeURIComponent(d.teacher)+
+          "&entry.237619249="+encodeURIComponent(d.score)+
+          "&entry.1420278665="+encodeURIComponent(d.percent)+
+          "&entry.2006521624="+encodeURIComponent(d.review);
+  window.open(base+q,"_blank");
 };
 
 prog();
