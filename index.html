@@ -8,7 +8,7 @@ body{font-family:'Lexend',Arial,sans-serif;background:linear-gradient(180deg,#f7
 </style></head><body><div class="w">
 <div class="c"><div class="tag">B.7A • SELF-CHECKING INDEPENDENT PRACTICE</div><h1>Crack the Code: DNA → Traits</h1><p>Learn it. Write it. Show your work. Check yourself.</p><div class="bar"><div id="bar"></div></div><small id="status">Mission ready</small></div>
 <div id="home" class="c"><div class="note"><b>Paper required.</b> You will copy key ideas, draw models, make predictions, and show your work.</div><h2>Your Mission</h2><p>Complete five checkpoints and a Final Boss. Each checkpoint teaches you before you apply it.</p>
-<div class="mini-visual"><span class="bubble">🧬 DNA</span><span class="arrow">→</span><span class="bubble">🔵 Amino Acids</span><span class="arrow">→</span><span class="bubble">🔗 Polypeptide</span><span class="arrow">→</span><span class="bubble">👁️ Trait</span></div><div class="write"><b>Set up your paper:</b><ol><li>Name, class period, and “DNA → Traits Game.”</li><li>Number your work when prompted.</li><li>Keep all work for your teacher.</li></ol></div><label><input id="ready" type="checkbox"> I have paper and something to write with.</label><div class="actions"><button id="start" class="btn primary" disabled>Start Mission →</button></div></div>
+<div class="mini-visual"><span class="bubble">DNA</span><span class="arrow">→</span><span class="bubble">Amino Acids</span><span class="arrow">→</span><span class="bubble">Polypeptide</span><span class="arrow">→</span><span class="bubble">Trait</span></div><div class="write"><b>Set up your paper:</b><ol><li>Name, class period, and “DNA → Traits Game.”</li><li>Number your work when prompted.</li><li>Keep all work for your teacher.</li></ol></div><label><input id="ready" type="checkbox"> I have paper and something to write with.</label><div class="actions"><button id="start" class="btn primary" disabled>Start Mission →</button></div></div>
 <div id="lesson" class="c hide"><div id="ltag" class="tag"></div><h2 id="ltitle"></h2><div id="teach"></div><div id="copy" class="write"></div><label><input id="copied" type="checkbox"> I completed the paper task.</label><div class="actions"><button id="backLesson" class="btn back">← Back</button><button id="vocab1" class="btn">Vocabulary Help</button><button id="practice" class="btn primary" disabled>Practice It →</button></div><div id="vp1" class="hide"></div></div>
 <div id="qcard" class="c hide"><div id="qtag" class="tag"></div><h2 id="qtitle"></h2><div id="qvisual" class="qvisual"></div><div id="work" class="write"></div><label><input id="worked" type="checkbox"> I showed my work / wrote my prediction on paper.</label><div id="qa" class="hide"><p><b id="question"></b></p><form id="form"><div id="choices"></div><div class="actions"><button type="button" id="backQuestion" class="btn back">← Back</button><button type="button" id="help" class="btn">Need Help?</button><button type="button" id="vocab2" class="btn">Vocabulary</button><button id="check" class="btn primary">Check Answer</button></div></form><div id="feedback" class="hide"></div><div id="helpbox" class="note hide" style="margin-top:12px"></div><button id="next" class="btn primary hide" style="margin-top:14px">Continue →</button></div><div id="vp2" class="hide"></div></div>
 <div id="bossintro" class="c hide"><div class="tag">FINAL BOSS</div><h2>Prove You Can Crack the Code</h2><p>Answer each question on paper first and include a short reason or your work.</p><div class="write"><b>Write this heading:</b> FINAL BOSS. Number your next six responses 1–6.</div><label><input id="bready" type="checkbox"> My Final Boss section is ready.</label><div class="actions"><button id="bstart" class="btn primary" disabled>Begin Final Boss →</button></div></div>
@@ -35,38 +35,38 @@ const L=[
 function visualFor(cp,qi,bossMode){
  if(bossMode){
   const visuals=[
-   '<div class="visual-title">BUILDING A NUCLEOTIDE</div><div class="diagram-grid"><div class="diagram-box"><span class="bigicon">⬟</span>Sugar</div><div class="diagram-box"><span class="bigicon">Ⓟ</span>Phosphate</div><div class="diagram-box"><span class="bigicon">🔤</span>Base</div></div>',
+   '<div class="visual-title">BUILDING A NUCLEOTIDE</div><div class="diagram-grid"><div class="diagram-box"><span class="bigicon">S</span>Sugar</div><div class="diagram-box"><span class="bigicon">P</span>Phosphate</div><div class="diagram-box"><span class="bigicon">BASE</span>Base</div></div>',
    '<div class="visual-title">DNA BASE-PAIR CLUE</div><div class="dna-strand"><span class="base t">T</span><span class="base a">A</span><span class="base cbase">C</span><span class="base g">G</span></div><p style="text-align:center"><b>A ↔ T &nbsp; • &nbsp; C ↔ G</b></p>',
-   '<div class="visual-title">FOLLOW THE INFORMATION</div><div class="flow"><span>🧬 DNA</span>→<span>🔵 Amino acids</span>→<span>🔗 Polypeptide</span>→<span>👁️ Trait</span></div>',
-   '<div class="visual-title">POLYPEPTIDE → TRAIT</div><div class="diagram-grid"><div class="diagram-box">🔗<br>Polypeptide</div><div class="diagram-box">🎨<br>Pigment</div><div class="diagram-box">🌺<br>Trait</div></div>',
+   '<div class="visual-title">FOLLOW THE INFORMATION</div><div class="flow"><span>DNA DNA</span>→<span>AA Amino acids</span>→<span>POLY Polypeptide</span>→<span>TRAIT Trait</span></div>',
+   '<div class="visual-title">POLYPEPTIDE → TRAIT</div><div class="diagram-grid"><div class="diagram-box">POLY<br>Polypeptide</div><div class="diagram-box">PIGMENT<br>Pigment</div><div class="diagram-box">FLOWER<br>Trait</div></div>',
    '<div class="visual-title">A CHANGE CAN MOVE THROUGH THE PATHWAY</div><div class="flow"><span>DNA change</span>→<span>amino acids MAY change</span>→<span>polypeptide MAY change</span>→<span>trait MAY change</span></div>',
-   '<div class="visual-title">SCIENCE USES EVIDENCE</div><div class="flow"><span>🔬 New evidence</span>→<span>🧐 Evaluate</span>→<span>✏️ Revise if supported</span></div>'
+   '<div class="visual-title">SCIENCE USES EVIDENCE</div><div class="flow"><span>EVIDENCE New evidence</span>→<span>EVALUATE Evaluate</span>→<span>REVISE Revise if supported</span></div>'
   ]; return visuals[bi]||'';
  }
  const v=[
   [
    '<div class="visual-title">USE THE PAIRING KEY</div><div class="dna-strand"><span class="base a">A</span><span class="base cbase">C</span><span class="base t">T</span><span class="base g">G</span><span class="base g">G</span><span class="base a">A</span></div><p style="text-align:center"><b>A ↔ T &nbsp; • &nbsp; C ↔ G</b></p>',
-   '<div class="visual-title">ONE NUCLEOTIDE = THREE PARTS</div><div class="diagram-grid"><div class="diagram-box"><span class="bigicon">⬟</span>Deoxyribose sugar</div><div class="diagram-box"><span class="bigicon">Ⓟ</span>Phosphate</div><div class="diagram-box"><span class="bigicon">A</span>Nitrogen base</div></div>',
+   '<div class="visual-title">ONE NUCLEOTIDE = THREE PARTS</div><div class="diagram-grid"><div class="diagram-box"><span class="bigicon">S</span>Deoxyribose sugar</div><div class="diagram-box"><span class="bigicon">P</span>Phosphate</div><div class="diagram-box"><span class="bigicon">A</span>Nitrogen base</div></div>',
    '<div class="visual-title">READ THE MODEL</div><div class="sentence-frame">DNA is built from repeating <b>nucleotides</b>. Each nucleotide has 3 parts.</div>'
   ],
   [
-   '<div class="visual-title">THE BIG PATHWAY</div><div class="flow"><span>🧬 DNA sequence</span>→<span>🔵 Amino acid sequence</span>→<span>🔗 Polypeptide</span>→<span>👁️ Trait</span></div>',
+   '<div class="visual-title">THE BIG PATHWAY</div><div class="flow"><span>DNA DNA sequence</span>→<span>AA Amino acid sequence</span>→<span>POLY Polypeptide</span>→<span>TRAIT Trait</span></div>',
    '<div class="visual-title">SPOT THE CHANGE</div><div style="text-align:center;font-weight:700">Gene A: A–T–G–<mark>C</mark>–C–A<br>Gene B: A–T–G–<mark>A</mark>–C–A</div>',
    '<div class="visual-title">ORDER MATTERS</div><div class="dna-strand"><span class="base a">A</span><span class="base t">T</span><span class="base g">G</span><span class="base cbase">C</span></div><p style="text-align:center">Different order → information may change</p>'
   ],
   [
-   '<div class="visual-title">MAKE A PREDICTION</div><div class="flow"><span>🚫 No polypeptide</span>→<span>🚫 No purple pigment</span>→<span>🌼 White flower</span></div>',
-   '<div class="visual-title">HOW A POLYPEPTIDE CONNECTS TO A TRAIT</div><div class="flow"><span>🔗 Polypeptide</span>→<span>⚙️ Cell job/product</span>→<span>👁️ Trait</span></div>',
-   '<div class="visual-title">COMPARE</div><div class="diagram-grid"><div class="diagram-box">🔗 Present<br>→ 🎨 pigment<br>→ 🌺 purple</div><div class="diagram-box">🚫 Absent<br>→ no pigment<br>→ 🌼 white</div><div class="diagram-box">Look for the pattern</div></div>'
+   '<div class="visual-title">MAKE A PREDICTION</div><div class="flow"><span>NO No polypeptide</span>→<span>NO No purple pigment</span>→<span>FLOWER White flower</span></div>',
+   '<div class="visual-title">HOW A POLYPEPTIDE CONNECTS TO A TRAIT</div><div class="flow"><span>POLY Polypeptide</span>→<span>FUNCTION Cell job/product</span>→<span>TRAIT Trait</span></div>',
+   '<div class="visual-title">COMPARE</div><div class="diagram-grid"><div class="diagram-box">POLY Present<br>→ PIGMENT pigment<br>→ FLOWER purple</div><div class="diagram-box">NO Absent<br>→ no pigment<br>→ FLOWER white</div><div class="diagram-box">Look for the pattern</div></div>'
   ],
   [
-   '<div class="visual-title">CAUSE → EFFECT</div><div class="flow"><span>🧬 DNA change</span>→<span>🔵 amino acids MAY change</span>→<span>🔗 polypeptide MAY change</span>→<span>👁️ trait MAY change</span></div>',
+   '<div class="visual-title">CAUSE → EFFECT</div><div class="flow"><span>DNA DNA change</span>→<span>AA amino acids MAY change</span>→<span>POLY polypeptide MAY change</span>→<span>TRAIT trait MAY change</span></div>',
    '<div class="visual-title">KEY WORD: MAY</div><div class="sentence-frame">A DNA change <b>MAY</b> affect a trait. It does <b>not always</b> change the trait.</div>',
    '<div class="visual-title">TRACE THE PATH</div><div class="flow"><span>DNA</span>→<span>amino acids</span>→<span>polypeptide</span>→<span>trait</span></div>'
   ],
   [
-   '<div class="visual-title">THINK LIKE A SCIENTIST</div><div class="flow"><span>🔬 Evidence</span>→<span>🧐 Evaluate</span>→<span>💡 Explanation</span></div>',
-   '<div class="visual-title">WHEN NEW EVIDENCE APPEARS</div><div class="flow"><span>📊 New evidence</span>→<span>🧐 Evaluate</span>→<span>✏️ Revise if supported</span></div>',
+   '<div class="visual-title">THINK LIKE A SCIENTIST</div><div class="flow"><span>EVIDENCE Evidence</span>→<span>EVALUATE Evaluate</span>→<span>EXPLANATION Explanation</span></div>',
+   '<div class="visual-title">WHEN NEW EVIDENCE APPEARS</div><div class="flow"><span>DATA New evidence</span>→<span>EVALUATE Evaluate</span>→<span>REVISE Revise if supported</span></div>',
    '<div class="visual-title">SCIENCE IS EVIDENCE-BASED</div><div class="sentence-frame">Scientists do not choose explanations because they are easiest or most popular. They compare explanations with <b>evidence</b>.</div>'
   ]
  ]; return (v[cp]&&v[cp][qi])||'';
@@ -109,16 +109,28 @@ function goBack(){
 }
 function showCurrentLessonForBack(){lesson();}
 
-function vocab(id){let p=$(id);p.innerHTML=`<div class="c" style="margin-top:14px;background:#f9fcff"><div class="vocab-title">📚 Quick Vocabulary</div><div class="vgrid">
-<div class="vcard"><div class="vicon">🧬</div><div><div class="vword">DNA</div><div class="vdef">Your cell's genetic instructions.</div></div></div>
-<div class="vcard"><div class="vicon">🧩</div><div><div class="vword">Nucleotide</div><div class="vdef">One building block of DNA.</div></div></div>
-<div class="vcard"><div class="vicon">📍</div><div><div class="vword">Gene</div><div class="vdef">A section of DNA with instructions.</div></div></div>
-<div class="vcard"><div class="vicon">🔵</div><div><div class="vword">Amino Acid</div><div class="vdef">A building block of a polypeptide.</div></div></div>
-<div class="vcard"><div class="vicon">🔗</div><div><div class="vword">Polypeptide</div><div class="vdef">A chain of amino acids.</div></div></div>
-<div class="vcard"><div class="vicon">👁️</div><div><div class="vword">Trait</div><div class="vdef">A characteristic of an organism.</div></div></div>
-<div class="vcard"><div class="vicon">🔢</div><div><div class="vword">Sequence</div><div class="vdef">The order things are arranged.</div></div></div>
-<div class="vcard"><div class="vicon">🔬</div><div><div class="vword">Scientific Evidence</div><div class="vdef">Data or observations scientists use.</div></div></div>
-</div></div>`;p.classList.toggle("hide")}
+function vocab(id){
+let p=$(id);
+const dna='<svg viewBox="0 0 90 60" aria-label="DNA double helix"><path d="M18 6 C70 18 20 42 72 54 M72 6 C20 18 70 42 18 54" fill="none" stroke="#2d6f9f" stroke-width="4"/><g stroke="#e29b42" stroke-width="3"><path d="M29 11L61 11"/><path d="M25 22L65 22"/><path d="M25 38L65 38"/><path d="M29 49L61 49"/></g></svg>';
+const nucleotide='<svg viewBox="0 0 100 60" aria-label="Nucleotide diagram"><circle cx="18" cy="30" r="13" fill="#9bc7e5"/><polygon points="47,15 63,22 60,40 43,45 33,30" fill="#f2cf6b"/><rect x="66" y="19" width="28" height="22" rx="5" fill="#a9d9af"/><text x="18" y="34" text-anchor="middle" font-size="10">P</text><text x="48" y="34" text-anchor="middle" font-size="9">Sugar</text><text x="80" y="33" text-anchor="middle" font-size="9">Base</text></svg>';
+const gene='<svg viewBox="0 0 100 60" aria-label="Gene as a section of DNA"><path d="M8 30H92" stroke="#9eb5c5" stroke-width="8"/><path d="M35 30H67" stroke="#2d6f9f" stroke-width="12"/><path d="M35 15V45M67 15V45" stroke="#17324d" stroke-width="2"/></svg>';
+const amino='<svg viewBox="0 0 100 60" aria-label="Amino acid building block"><circle cx="50" cy="30" r="20" fill="#8fc6e8"/><text x="50" y="35" text-anchor="middle" font-size="14" font-weight="700">AA</text></svg>';
+const poly='<svg viewBox="0 0 100 60" aria-label="Polypeptide chain"><g fill="#8fc6e8" stroke="#2d6f9f" stroke-width="2"><circle cx="15" cy="30" r="10"/><circle cx="38" cy="22" r="10"/><circle cx="61" cy="34" r="10"/><circle cx="85" cy="24" r="10"/></g><path d="M24 27L29 25M47 25L52 30M70 30L76 27" stroke="#17324d" stroke-width="3"/></svg>';
+const trait='<svg viewBox="0 0 100 60" aria-label="Flower trait"><path d="M50 55V34" stroke="#4d915a" stroke-width="4"/><g fill="#8b65b0"><circle cx="50" cy="22" r="10"/><circle cx="38" cy="26" r="10"/><circle cx="62" cy="26" r="10"/><circle cx="43" cy="14" r="10"/><circle cx="57" cy="14" r="10"/></g><circle cx="50" cy="22" r="7" fill="#f0c65c"/></svg>';
+const seq='<svg viewBox="0 0 100 60" aria-label="Ordered DNA sequence"><g font-size="16" font-weight="700"><text x="8" y="35">A</text><text x="31" y="35">T</text><text x="54" y="35">C</text><text x="77" y="35">G</text></g><path d="M7 44H88" stroke="#2d6f9f" stroke-width="2"/><path d="M82 39L90 44L82 49" fill="none" stroke="#2d6f9f" stroke-width="2"/></svg>';
+const evidence='<svg viewBox="0 0 100 60" aria-label="Scientific evidence"><circle cx="38" cy="26" r="16" fill="none" stroke="#2d6f9f" stroke-width="5"/><path d="M50 38L67 54" stroke="#17324d" stroke-width="6"/><rect x="67" y="9" width="22" height="30" rx="3" fill="#e9f2f7" stroke="#7897aa"/><path d="M72 17H84M72 23H84M72 29H81" stroke="#7897aa" stroke-width="2"/></svg>';
+p.innerHTML=`<div class="c" style="margin-top:14px;background:#f9fcff"><div class="vocab-title">Quick Vocabulary</div><div class="vgrid">
+<div class="vcard"><div class="vicon">${dna}</div><div><div class="vword">DNA</div><div class="vdef">The molecule that stores genetic instructions.</div></div></div>
+<div class="vcard"><div class="vicon">${nucleotide}</div><div><div class="vword">Nucleotide</div><div class="vdef">One building block of DNA. It has 3 parts.</div></div></div>
+<div class="vcard"><div class="vicon">${gene}</div><div><div class="vword">Gene</div><div class="vdef">A section of DNA that carries instructions.</div></div></div>
+<div class="vcard"><div class="vicon">${amino}</div><div><div class="vword">Amino Acid</div><div class="vdef">A small building block used to make a polypeptide.</div></div></div>
+<div class="vcard"><div class="vicon">${poly}</div><div><div class="vword">Polypeptide</div><div class="vdef">A chain of amino acids made from genetic instructions.</div></div></div>
+<div class="vcard"><div class="vicon">${trait}</div><div><div class="vword">Trait</div><div class="vdef">A characteristic of an organism, such as flower color.</div></div></div>
+<div class="vcard"><div class="vicon">${seq}</div><div><div class="vword">Sequence</div><div class="vdef">The specific order of things.</div></div></div>
+<div class="vcard"><div class="vicon">${evidence}</div><div><div class="vword">Scientific Evidence</div><div class="vdef">Data or observations scientists use to test explanations.</div></div></div>
+</div></div>`;
+p.classList.toggle("hide");
+}
 function prog(){let d=boss?15+bi:cp*3+qi,p=Math.min(100,Math.round(d/21*100));$("bar").style.width=p+"%";$("status").textContent=boss?"Final Boss • "+Math.min(bi+1,6)+" of 6":"Checkpoint "+(cp+1)+" of 5 • "+p+"% complete"}
 function lesson(){let x=L[cp];$("qcard").classList.add("hide");$("lesson").classList.remove("hide");$("ltag").textContent="CHECKPOINT "+(cp+1)+" OF 5";$("ltitle").textContent=x[0];$("teach").innerHTML='<div class="note"><b>Learn It:</b> '+x[1]+'</div>';$("copy").innerHTML=x[2];$("copied").checked=false;$("practice").disabled=true;prog()}
 function cur(){return boss?B[bi]:L[cp][4][qi]}
