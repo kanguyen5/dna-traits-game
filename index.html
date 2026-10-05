@@ -7,12 +7,31 @@ body{font-family:'Lexend',Arial,sans-serif;background:linear-gradient(180deg,#f7
 @media(max-width:600px){.diagram-grid{grid-template-columns:1fr}.base{width:38px;height:38px}}
 </style></head><body><div class="w">
 <div class="c"><div class="tag">B.7A • SELF-CHECKING INDEPENDENT PRACTICE</div><h1>Crack the Code: DNA → Traits</h1><p>Learn it. Write it. Show your work. Check yourself.</p><div class="bar"><div id="bar"></div></div><small id="status">Mission ready</small></div>
-<div id="home" class="c"><div class="note"><b>Paper required.</b> You will copy key ideas, draw models, make predictions, and show your work.</div><h2>Your Mission</h2><p>Complete five checkpoints and a Final Boss. Each checkpoint teaches you before you apply it.</p>
+
+<div id="login" class="c">
+  <div class="tag">STUDENT CHECK-IN</div>
+  <h2>Before You Begin</h2>
+  <p>Enter your information exactly as it appears on your class roster. Your Final Boss grade will be sent to your teacher.</p>
+  <div class="diagram-grid" style="text-align:left">
+    <label class="diagram-box">First Name<br><input id="firstName" type="text" autocomplete="given-name" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"></label>
+    <label class="diagram-box">Last Name<br><input id="lastName" type="text" autocomplete="family-name" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"></label>
+    <label class="diagram-box">Class Period<br><select id="period" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"><option value="">Select...</option><option>1st</option><option>3rd</option><option>4th</option><option>6th</option><option>7th</option></select></label>
+  </div>
+  <div id="loginError" class="fb try hide">Enter your first name, last name, and class period.</div>
+  <div class="actions"><button id="loginBtn" class="btn primary">Continue →</button></div>
+</div>
+<div id="home" class="c hide"><div class="note"><b>Paper required.</b> You will copy key ideas, draw models, make predictions, and show your work.</div><h2>Your Mission</h2><p>Complete five checkpoints and a Final Boss. Each checkpoint teaches you before you apply it.</p>
 <div class="mini-visual"><span class="bubble">DNA</span><span class="arrow">→</span><span class="bubble">Amino Acids</span><span class="arrow">→</span><span class="bubble">Polypeptide</span><span class="arrow">→</span><span class="bubble">Trait</span></div><div class="write"><b>Set up your paper:</b><ol><li>Name, class period, and “DNA → Traits Game.”</li><li>Number your work when prompted.</li><li>Keep all work for your teacher.</li></ol></div><label><input id="ready" type="checkbox"> I have paper and something to write with.</label><div class="actions"><button id="start" class="btn primary" disabled>Start Mission →</button></div></div>
 <div id="lesson" class="c hide"><div id="ltag" class="tag"></div><h2 id="ltitle"></h2><div id="teach"></div><div id="copy" class="write"></div><label><input id="copied" type="checkbox"> I completed the paper task.</label><div class="actions"><button id="backLesson" class="btn back">← Back</button><button id="vocab1" class="btn">Vocabulary Help</button><button id="practice" class="btn primary" disabled>Practice It →</button></div><div id="vp1" class="hide"></div></div>
 <div id="qcard" class="c hide"><div id="qtag" class="tag"></div><h2 id="qtitle"></h2><div id="qvisual" class="qvisual"></div><div id="work" class="write"></div><label><input id="worked" type="checkbox"> I showed my work / wrote my prediction on paper.</label><div id="qa" class="hide"><p><b id="question"></b></p><form id="form"><div id="choices"></div><div class="actions"><button type="button" id="backQuestion" class="btn back">← Back</button><button type="button" id="help" class="btn">Need Help?</button><button type="button" id="vocab2" class="btn">Vocabulary</button><button id="check" class="btn primary">Check Answer</button></div></form><div id="feedback" class="hide"></div><div id="helpbox" class="note hide" style="margin-top:12px"></div><button id="next" class="btn primary hide" style="margin-top:14px">Continue →</button></div><div id="vp2" class="hide"></div></div>
-<div id="bossintro" class="c hide"><div class="tag">FINAL BOSS</div><h2>Prove You Can Crack the Code</h2><p>Answer each question on paper first and include a short reason or your work.</p><div class="write"><b>Write this heading:</b> FINAL BOSS. Number your next six responses 1–6.</div><label><input id="bready" type="checkbox"> My Final Boss section is ready.</label><div class="actions"><button id="bstart" class="btn primary" disabled>Begin Final Boss →</button></div></div>
-<div id="finish" class="c hide"><div class="tag">MISSION COMPLETE</div><h2>Code Cracked!</h2><h1 id="result"></h1><p id="review"></p><div class="note"><b>The Master Code</b><div class="flow"><span>DNA nucleotide sequence</span>→<span>amino acid sequence</span>→<span>polypeptide</span>→<span>trait</span></div></div><div class="write"><b>Final paper check:</b> Make sure your notes, show-your-work examples, and all six Final Boss responses are complete.</div><button id="restart" class="btn">Restart Game</button></div>
+<div id="bossintro" class="c hide"><div class="tag">FINAL BOSS</div><h2>Prove You Can Crack the Code</h2><p>Answer each question on paper first and include a short reason or your work. Your first answer on each Final Boss question counts toward your grade.</p><div class="write"><b>Write this heading:</b> FINAL BOSS. Number your next ten responses 1–10.</div><label><input id="bready" type="checkbox"> My Final Boss section is ready.</label><div class="actions"><button id="bstart" class="btn primary" disabled>Begin Final Boss →</button></div></div>
+<div id="finish" class="c hide"><div class="tag">MISSION COMPLETE</div><h2>Code Cracked!</h2><h1 id="result"></h1><p id="review"></p><div class="note"><b>The Master Code</b><div class="flow"><span>DNA nucleotide sequence</span>→<span>amino acid sequence</span>→<span>polypeptide</span>→<span>trait</span></div></div><div id="submitStatus" class="note"><b>Your grade is ready to submit.</b><br>Click <b>Submit My Results</b> once. Wait for the confirmation before closing this page.</div>
+<div class="actions"><button id="submitResults" class="btn primary">Submit My Results</button></div>
+<iframe name="submitFrame" id="submitFrame" class="hide"></iframe>
+<form id="resultForm" class="hide" method="POST" target="submitFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSfJRlmGr2lX13e4-p7LV3nzARkZX8Y2AGjA5cJkRGoQfoXKMQ/formResponse">
+<input name="entry.1041621689" id="rfFirst"><input name="entry.257146659" id="rfLast"><input name="entry.1943035688" id="rfPeriod"><input name="entry.237619249" id="rfScore"><input name="entry.1420278665" id="rfPercent"><input name="entry.2006521624" id="rfReview">
+</form>
+<div class="write"><b>Final paper check:</b> Make sure your notes, show-your-work examples, and all six Final Boss responses are complete.</div><button id="restart" class="btn">Restart Game</button></div>
 </div><script>
 const L=[
 ["Build DNA","A DNA nucleotide has three parts: <b>deoxyribose sugar</b>, a <b>phosphate group</b>, and a <b>nitrogen base</b>. DNA bases are A, T, C, G. Base pairing: <b>A ↔ T</b> and <b>C ↔ G</b>.","<b>WRITE THIS DOWN — #1</b><br>DNA nucleotide = deoxyribose sugar + phosphate group + nitrogen base<br>DNA bases = A, T, C, G<br>Base pairing = A ↔ T and C ↔ G<br><br>Draw one nucleotide and label its 3 parts.","Remember: sugar + phosphate + nitrogen base. Pair A with T and C with G.",[
@@ -87,8 +106,17 @@ L[2][4].push(["Read the Pattern","<b>ON PAPER — #9B</b><br>Make a two-column c
 L[3][4].push(["Trace the Change","<b>ON PAPER — #12B</b><br>Write the pathway and place a star where a DNA change begins.","Which part of the pathway is affected first when the nucleotide sequence changes?",["The DNA nucleotide sequence","The final trait","The environment","The chromosome number"],0,["Where did the change happen?","The prompt says the nucleotide sequence changed.","The change begins in DNA, then may affect later steps."],"Correct. The change begins in the DNA nucleotide sequence."]);
 L[4][4].push(["Evidence Check","<b>ON PAPER — #15B</b><br>Write: CLAIM + EVIDENCE. Underline EVIDENCE.","Which is the strongest reason to accept a scientific explanation?",["It is supported by reliable evidence","It is the oldest explanation","It is the easiest to remember","Most students chose it"],0,["Think about what makes an explanation scientific.","Popularity is not evidence.","Scientific explanations are supported by reliable evidence."],"Correct. Reliable evidence is used to support scientific explanations."]);
 
+
+B.push(
+["Write the three DNA base-pairing rules you know on paper.","A DNA nucleotide contains cytosine. Which base should pair with it?",["Guanine","Adenine","Thymine","Uracil"],0,0],
+["Write the master pathway before answering.","Which statement correctly explains how a gene can influence a trait?",["Its nucleotide sequence specifies amino-acid order in a polypeptide that can influence a trait","A gene turns directly into a visible trait","Traits determine the DNA sequence","Amino acids create genes"],0,1],
+["On paper, compare: polypeptide PRESENT vs. ABSENT.","A polypeptide is required to make a pigment. What is the best conclusion if the polypeptide is absent?",["The pigment-related trait may change","The organism has no DNA","Every trait changes","The chromosome number must change"],0,2],
+["Write: evidence → evaluate → revise if supported.","Which action best shows how science responds to new evidence about the origin of DNA?",["Scientists evaluate the evidence and revise explanations when warranted","Scientists keep the oldest explanation","Scientists choose the most popular explanation","Scientists ignore evidence that conflicts"],0,4]
+);
+
 let cp=0,qi=0,boss=false,bi=0,score=0,first=true,tries=0,review=[0,0,0,0,0];
 const $=x=>document.getElementById(x);
+$("loginBtn").onclick=()=>{let f=$("firstName").value.trim(),l=$("lastName").value.trim(),p=$("period").value;if(!f||!l||!p){$("loginError").classList.remove("hide");return}$("loginError").classList.add("hide");$("login").classList.add("hide");$("home").classList.remove("hide")};
 $("ready").onchange=e=>$("start").disabled=!e.target.checked;$("start").onclick=()=>{$("home").classList.add("hide");lesson()};
 $("copied").onchange=e=>$("practice").disabled=!e.target.checked;$("practice").onclick=question;
 $("worked").onchange=e=>$("qa").classList.toggle("hide",!e.target.checked);$("form").onsubmit=check;$("next").onclick=advance;
@@ -131,12 +159,29 @@ p.innerHTML=`<div class="c" style="margin-top:14px;background:#f9fcff"><div clas
 </div></div>`;
 p.classList.toggle("hide");
 }
-function prog(){let d=boss?15+bi:cp*3+qi,p=Math.min(100,Math.round(d/21*100));$("bar").style.width=p+"%";$("status").textContent=boss?"Final Boss • "+Math.min(bi+1,6)+" of 6":"Checkpoint "+(cp+1)+" of 5 • "+p+"% complete"}
+function prog(){let d=boss?15+bi:cp*3+qi,p=Math.min(100,Math.round(d/25*100));$("bar").style.width=p+"%";$("status").textContent=boss?"Final Boss • "+Math.min(bi+1,10)+" of 10":"Checkpoint "+(cp+1)+" of 5 • "+p+"% complete"}
 function lesson(){let x=L[cp];$("qcard").classList.add("hide");$("lesson").classList.remove("hide");$("ltag").textContent="CHECKPOINT "+(cp+1)+" OF 5";$("ltitle").textContent=x[0];$("teach").innerHTML='<div class="note"><b>Learn It:</b> '+x[1]+'</div>';$("copy").innerHTML=x[2];$("copied").checked=false;$("practice").disabled=true;prog()}
 function cur(){return boss?B[bi]:L[cp][4][qi]}
 function question(){let q=cur();tries=0;first=true;$("lesson").classList.add("hide");$("qcard").classList.remove("hide");$("qtag").textContent=boss?"FINAL BOSS • "+(bi+1)+" OF 6":"CHECKPOINT "+(cp+1)+" • PRACTICE "+(qi+1)+" OF 3";$("qtitle").textContent=boss?"Final Boss "+(bi+1):q[0];$("qvisual").innerHTML=visualFor(cp,qi,boss);$("work").innerHTML="<b>SHOW YOUR WORK FIRST</b><br>"+(boss?q[0]:q[1]);$("worked").checked=false;$("qa").classList.add("hide");$("question").textContent=boss?q[1]:q[2];$("feedback").classList.add("hide");$("helpbox").classList.add("hide");$("next").classList.add("hide");$("check").classList.remove("hide");let c=boss?q[2]:q[3],ans=boss?q[3]:q[4],multi=Array.isArray(ans),box=$("choices");box.innerHTML="";c.forEach((t,i)=>{let l=document.createElement("label");l.className="choice";l.innerHTML='<input type="'+(multi?"checkbox":"radio")+'" name="ans" value="'+i+'">'+t;box.appendChild(l)});prog()}
 function check(e){e.preventDefault();let q=cur(),sel=[...document.querySelectorAll('#choices input:checked')],ans=boss?q[3]:q[4];if(!sel.length){$("feedback").className="fb try";$("feedback").innerHTML="<b>Choose an answer first.</b>";return}let p=sel.map(x=>+x.value),ok=Array.isArray(ans)?p.length===ans.length&&p.every(x=>ans.includes(x)):p.length===1&&p[0]===ans;tries++;if(boss&&first){first=false;if(ok)score++;else review[q[4]]++}if(ok){$("feedback").className="fb good";$("feedback").innerHTML="<b>✓ Correct.</b> "+(boss?"Check your paper and add anything you missed.":q[6]+"<br><b>Check your paper:</b> add anything important you missed.");document.querySelectorAll('#choices input').forEach(x=>x.disabled=true);$("check").classList.add("hide");$("next").classList.remove("hide")}else{if(!boss)review[cp]++;let m=boss?"Recheck your written work, then try again.":q[5][Math.min(tries-1,2)];$("feedback").className="fb try";$("feedback").innerHTML="<b>Not yet.</b> "+m;sel.forEach(x=>x.checked=false)}}
-function advance(){if(boss){bi++;if(bi>=6)return finish();question();return}qi++;if(qi<3)return question();cp++;qi=0;if(cp>=5){$("qcard").classList.add("hide");$("bossintro").classList.remove("hide");prog()}else lesson()}
-function finish(){$("qcard").classList.add("hide");$("finish").classList.remove("hide");$("bar").style.width="100%";$("status").textContent="Mission complete";$("result").textContent="Final Boss: "+score+" / 6";let n=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"],m=Math.max(...review);$("review").textContent=m?"Recommended review: "+n[review.indexOf(m)]+".":"Strong work across all checkpoints."}
+function advance(){if(boss){bi++;if(bi>=10)return finish();question();return}qi++;if(qi<3)return question();cp++;qi=0;if(cp>=5){$("qcard").classList.add("hide");$("bossintro").classList.remove("hide");prog()}else lesson()}
+function finish(){$("qcard").classList.add("hide");$("finish").classList.remove("hide");$("bar").style.width="100%";$("status").textContent="Mission complete";$("result").textContent="Final Boss: "+score+" / 10 ("+(score*10)+"%)";let n=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"],m=Math.max(...review);$("review").textContent=m?"Recommended review: "+n[review.indexOf(m)]+".":"Strong work across all checkpoints."}
+
+$("submitResults").onclick=()=>{
+  const names=["DNA components & base pairing","DNA sequence → amino acids","Polypeptides & traits","Effects of DNA changes","Scientific evidence & origin of DNA"];
+  const max=Math.max(...review);
+  const rec=max===0?"No review needed":names[review.indexOf(max)];
+  $("rfFirst").value=$("firstName").value.trim();
+  $("rfLast").value=$("lastName").value.trim();
+  $("rfPeriod").value=$("period").value;
+  $("rfScore").value=score+"/10";
+  $("rfPercent").value=(score*10)+"%";
+  $("rfReview").value=rec;
+  $("resultForm").submit();
+  $("submitResults").disabled=true;
+  $("submitResults").textContent="Submitted";
+  $("submitStatus").innerHTML="<b>Results submitted.</b><br>Your teacher now has your name, period, Final Boss grade, and recommended review area.";
+};
+
 prog();
 </script></body></html>
