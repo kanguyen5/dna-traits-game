@@ -5,17 +5,19 @@ body{font-family:'Lexend',Arial,sans-serif;background:radial-gradient(circle at 
 
 .navrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}.back{background:#f1f6fa}.qvisual{background:linear-gradient(135deg,#eef8ff,#fff8e8);border:2px solid #d9e8f1;border-radius:18px;padding:18px;margin:14px 0}.visual-title{font-size:13px;font-weight:800;letter-spacing:.08em;color:#52718a;margin-bottom:10px}.dna-strand{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}.base{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;border:2px solid rgba(0,0,0,.08)}.a{background:#dff4e4}.t{background:#ffe8b8}.cbase{background:#dfeeff}.g{background:#f5dff1}.diagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}.diagram-box{background:white;border:2px solid #dce8f1;border-radius:14px;padding:12px;font-weight:700}.bigicon{font-size:32px;display:block;margin-bottom:4px}.sentence-frame{background:white;border:2px dashed #b8cfdd;border-radius:14px;padding:14px;font-weight:600}.checkpoint-map{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.checkpoint-map span{padding:6px 9px;border-radius:999px;background:#edf4f8;font-size:12px;font-weight:700}.checkpoint-map .now{background:#dcefff;color:#174d73}.checkpoint-map .done{background:#e3f5e7;color:#28643b}
 @media(max-width:600px){.diagram-grid{grid-template-columns:1fr}.base{width:38px;height:38px}}
-.page-accent{height:8px;border-radius:999px;background:linear-gradient(90deg,#4f9dcc 0 22%,#efc55d 22% 43%,#75b982 43% 65%,#9b7fc2 65% 83%,#4f9dcc 83%);margin-bottom:14px}.section-dots{display:flex;gap:7px;margin:8px 0 18px}.section-dots i{display:block;width:11px;height:11px;border-radius:50%}.section-dots i:nth-child(1){background:#65a9d1}.section-dots i:nth-child(2){background:#efc55d}.section-dots i:nth-child(3){background:#79bd87}.section-dots i:nth-child(4){background:#a48ac7}</style></head><body><div class="w">
+.page-accent{height:8px;border-radius:999px;background:linear-gradient(90deg,#4f9dcc 0 22%,#efc55d 22% 43%,#75b982 43% 65%,#9b7fc2 65% 83%,#4f9dcc 83%);margin-bottom:14px}.section-dots{display:flex;gap:7px;margin:8px 0 18px}.section-dots i{display:block;width:11px;height:11px;border-radius:50%}.section-dots i:nth-child(1){background:#65a9d1}.section-dots i:nth-child(2){background:#efc55d}.section-dots i:nth-child(3){background:#79bd87}.section-dots i:nth-child(4){background:#a48ac7}.checkin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.checkin-grid .diagram-box{min-width:0}@media(max-width:650px){.checkin-grid{grid-template-columns:1fr}}
+</style></head><body><div class="w">
 <div class="c"><div class="page-accent"></div><div class="tag">B.7A • SELF-CHECKING INDEPENDENT PRACTICE</div><h1>Crack the Code: DNA → Traits</h1><p>Learn it. Write it. Show your work. Check yourself.</p><div class="bar"><div id="bar"></div></div><small id="status">Mission ready</small></div>
 
 <div id="login" class="c"><div class="section-dots"><i></i><i></i><i></i><i></i></div>
   <div class="tag">STUDENT CHECK-IN</div>
   <h2>Before You Begin</h2>
   <p>Enter your information exactly as it appears on your class roster. Your All or Nothing grade will be sent to your teacher.</p>
-  <div class="diagram-grid" style="text-align:left">
+  <div class="checkin-grid" style="text-align:left">
     <label class="diagram-box">First Name<br><input id="firstName" type="text" autocomplete="given-name" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"></label>
     <label class="diagram-box">Last Name<br><input id="lastName" type="text" autocomplete="family-name" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"></label>
-    <label class="diagram-box">Class Period<br><select id="period" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"><option value="">Select...</option><option>1st</option><option>3rd</option><option>4th</option><option>6th</option><option>7th</option></select></label>
+    <label class="diagram-box">Teacher<br><select id="teacher" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"><option value="">Select...</option><option>Davis</option><option>Nguyen</option><option>Lopez</option><option>Reeves</option></select></label>
+<label class="diagram-box">Class Period<br><select id="period" style="width:100%;font:inherit;padding:10px;margin-top:7px;border:2px solid #dce8f1;border-radius:10px"><option value="">Select...</option><option>1st</option><option>3rd</option><option>4th</option><option>5th</option><option>6th</option><option>7th</option><option>8th</option></select></label>
   </div>
   <div id="loginError" class="fb try hide">Enter your first name, last name, and class period.</div>
   <div class="actions"><button id="loginBtn" class="btn primary">Continue →</button></div>
@@ -29,7 +31,7 @@ body{font-family:'Lexend',Arial,sans-serif;background:radial-gradient(circle at 
 <div class="actions"><button id="submitResults" class="btn primary">Submit My Results</button></div>
 <iframe name="submitFrame" id="submitFrame" class="hide"></iframe>
 <form id="resultForm" class="hide" method="POST" target="submitFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSfJRlmGr2lX13e4-p7LV3nzARkZX8Y2AGjA5cJkRGoQfoXKMQ/formResponse">
-<input name="entry.1041621689" id="rfFirst"><input name="entry.257146659" id="rfLast"><input name="entry.1943035688" id="rfPeriod"><input name="entry.237619249" id="rfScore"><input name="entry.1420278665" id="rfPercent"><input name="entry.2006521624" id="rfReview">
+<input name="entry.1041621689" id="rfFirst"><input name="entry.257146659" id="rfLast"><input name="entry.1943035688" id="rfPeriod"><input name="entry.1403676878" id="rfTeacher"><input name="entry.237619249" id="rfScore"><input name="entry.1420278665" id="rfPercent"><input name="entry.2006521624" id="rfReview">
 </form>
 <div class="write"><b>Final paper check:</b> Make sure your checkpoint notes and quick-work examples are complete.</div><button id="restart" class="btn">Restart Game</button></div>
 </div><script>
@@ -114,7 +116,7 @@ L[4][4].push(["Evidence Check","<b>QUICK WORK — #15B</b><br>Write the word tha
 
 let cp=0,qi=0,boss=false,bi=0,score=0,first=true,tries=0,review=[0,0,0,0,0];
 const $=x=>document.getElementById(x);
-$("loginBtn").onclick=()=>{let f=$("firstName").value.trim(),l=$("lastName").value.trim(),p=$("period").value;if(!f||!l||!p){$("loginError").classList.remove("hide");return}$("loginError").classList.add("hide");$("login").classList.add("hide");$("home").classList.remove("hide")};
+$("loginBtn").onclick=()=>{let f=$("firstName").value.trim(),l=$("lastName").value.trim(),t=$("teacher").value,p=$("period").value;if(!f||!l||!t||!p){$("loginError").textContent="Enter your first name, last name, teacher, and class period.";$("loginError").classList.remove("hide");return}$("loginError").classList.add("hide");$("login").classList.add("hide");$("home").classList.remove("hide")};
 $("ready").onchange=e=>$("start").disabled=!e.target.checked;$("start").onclick=()=>{$("home").classList.add("hide");lesson()};
 $("copied").onchange=e=>$("practice").disabled=!e.target.checked;$("practice").onclick=question;
 $("worked").onchange=e=>$("qa").classList.toggle("hide",!e.target.checked);$("form").onsubmit=check;$("next").onclick=advance;
@@ -246,14 +248,14 @@ $("submitResults").onclick=()=>{
   const rec=max===0?"No review needed":names[review.indexOf(max)];
   $("rfFirst").value=$("firstName").value.trim();
   $("rfLast").value=$("lastName").value.trim();
-  $("rfPeriod").value=$("period").value;
+  $("rfPeriod").value=$("period").value;$("rfTeacher").value=$("teacher").value;
   $("rfScore").value=score+"/10";
   $("rfPercent").value=(score*10)+"%";
   $("rfReview").value=rec;
   $("resultForm").submit();
   $("submitResults").disabled=true;
   $("submitResults").textContent="Submitted";
-  $("submitStatus").innerHTML="<b>Results submitted.</b><br>Your teacher now has your name, period, All or Nothing grade, and recommended review area.";
+  $("submitStatus").innerHTML="<b>Results submitted.</b><br>Your teacher now has your name, teacher, period, All or Nothing grade, and recommended review area.";
 };
 
 prog();
